@@ -36,16 +36,35 @@ npm i apollo-server-express graphql
 npm run watch
 ```
 
+- In client directory:
+
+```
+npm i @apollo/client graphql
+npm install react-router-dom
+npm install jwt-decode
+```
+
 - At the root of the application
 
 ```
 npm init -y
+npm install -D concurrently
+```
 
+Add/edit the following code to package.json:
+
+```json
+"scripts": {
+  "start": "node server/server.js",
+  "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+  "install": "cd server && npm i && cd ../client && npm i",
+  "seed": "cd server && npm run seed"
+}
 ```
 
 ## Usage
 
-After installing npm packages, the application will be invoked by using the following command: `node index.js`.
+After installing npm packages, the application will be invoked by using the following command: `npm run develop`.
 
 #### Walkthrough Video
 
