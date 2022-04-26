@@ -11,10 +11,10 @@ const app = express();
 
 const startServer = async () => {
   // create a new Apollo server and pass in our schema data
+  // we provide the type definitions and resolvers so they know what our API looks like and how it resolves requests
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-  
   });
 
   // Start the Apollo server
@@ -38,6 +38,5 @@ db.once("open", () => {
     console.log(`API server running on port ${PORT}!`);
   });
 });
-
 
 // 21.1.5
