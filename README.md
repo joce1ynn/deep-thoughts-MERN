@@ -1,4 +1,4 @@
-# Node.js: Professional README Generator
+# MERN Stack: Deep Thoughts
 
 ## Table of Contents
 
@@ -13,15 +13,18 @@
 
 ## Description:
 
-This is a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
+Deep Thoughts is a social media application where users can create an account, post their thoughts for others to see, and interact with other users through these thoughts.
 
 ## Technology:
 
 Project is created with:
 
-- Javascript
+- MongoDB
+- Express.js
+- React.js
 - Node.js
-- Inquirer.js
+- GraphQL
+- JWT Authentication
 
 ## Installation
 
@@ -29,7 +32,7 @@ To run this project, install it locally using npm:
 
 - In server directory:
 
-```
+```sh
 npm i
 npm run seed
 npm i apollo-server-express graphql
@@ -38,7 +41,7 @@ npm run watch
 
 - In client directory:
 
-```
+```sh
 npm i @apollo/client graphql
 npm install react-router-dom
 npm install jwt-decode
@@ -46,12 +49,12 @@ npm install jwt-decode
 
 - At the root of the application
 
-```
+```sh
 npm init -y
 npm install -D concurrently
 ```
 
-Add/edit the following code to package.json:
+Open package.json and add/edit the scripts:
 
 ```json
 "scripts": {
@@ -64,17 +67,18 @@ Add/edit the following code to package.json:
 
 ## Usage
 
-After installing npm packages, the application will be invoked by using the following command: `npm run develop`.
+After installing npm packages, the application will be invoked by using the following command: 
+```
+npm run develop
+```
 
-#### Walkthrough Video
+### Deployment
 
-[Click me to see the demo video!](https://www.awesomescreenshot.com/video/7015399?key=3428a892b1ac4c806df108fb1bf83f03)
+[Click me to see the app!](https:)
 
-#### Example Screenshot
+### Example Screenshot
 
-![Screenshot](/assets/images/ET-1.png)
-![Screenshot](/assets/images/ET-2.png)
-![Screenshot](/assets/images/ET-3.png)
+![Screenshot](./client/public/DT.png)
 
 ## License
 
@@ -88,7 +92,9 @@ Made by Wenwen Tian
 ## Test Instructions
 
 To run tests for this application, you can run the following command:
-`npm run test`
+```
+npm run test
+```
 
 ## Questions?
 
@@ -96,7 +102,3 @@ Please feel free to contact me if you need any further information:
 
 - [Email](wwtian9@gmail.com)
 - [Github Profile](https://github.com/joce1ynn)
-
-```
-
-```
