@@ -32,6 +32,11 @@ const typeDefs = gql`
     username: String
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     users: [User]
     user(username: String!): User
@@ -40,8 +45,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!): User
-    addUser(username: String!, email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
   }
 `;
 
@@ -56,3 +61,7 @@ module.exports = typeDefs;
 
 // friends field is an array that will be populated with data that also adheres to the User type,
 // as a user's friends should follow the same data pattern as that user.
+
+// A token isn't part of the User model, so it doesn't make sense to add it to the User type definition. 
+// Instead, we'll create a new type specifically for authentication.
+// The auth code above means that an Auth type must return a token and can optionally include any other user data.
