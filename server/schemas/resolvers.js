@@ -84,6 +84,63 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    addThought: async (parent, args, context) => {
+      // Only logged-in users should be able to use this mutation, so we check for the existence of context.user
+      if (context.user) {
+        // create new thought
+        const thought = await Thought.create({
+          ...args,
+          username: context.user.username,
+        });
+
+        // update user with new thought
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { thoughts: thought._id } },
+          { new: true }
+        );
+
+        return thought;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
+    addReaction: async (parent, { thoughtId, reactionBody }, context) => {
+      if (context.user) {
+        //Reactions are stored as arrays on the Thought model, so you'll use the Mongo $push operator.
+        const updatedThought = await Thought.findOneAndUpdate(
+          { _id: thoughtId },
+          {
+            $push: {
+              reactions: { reactionBody, username: context.user.username },
+            },
+          },
+          { new: true, runValidators: true }
+        );
+
+        return updatedThought;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
+    addFriend: async (parent, { friendId }, context) => {
+      if (context.user) {
+        //This mutation will look for an incoming friendId and add that to the current user's friends array.
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          // A user can't be friends with the same person twice, though, hence why we're using the $addToSet operator instead of $push to prevent duplicate entries.
+          { $addToSet: { friends: friendId } },
+          { new: true }
+        ).populate("friends");
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
