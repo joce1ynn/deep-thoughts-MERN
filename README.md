@@ -25,6 +25,8 @@ Project is created with:
 - Node.js
 - GraphQL
 - JWT Authentication
+- Bcrypt.js
+- Faker.js
 
 ## Installation
 
@@ -36,6 +38,7 @@ To run this project, install it locally using npm:
 npm i
 npm run seed
 npm i apollo-server-express graphql
+npm install jsonwebtoken
 npm run watch
 ```
 
