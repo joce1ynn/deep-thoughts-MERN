@@ -30,7 +30,9 @@ Project is created with:
 
 ## Installation
 
-To run this project, install it locally using npm:
+To run this project, install it locally using npm: `npm install`
+
+#### Project Creating Process:
 
 - In server directory:
 
@@ -42,19 +44,18 @@ npm install jsonwebtoken
 npm run watch
 ```
 
+- At the root of the application
+
+```sh
+npx create-react-app client
+```
+
 - In client directory:
 
 ```sh
 npm i @apollo/client graphql
 npm install react-router-dom
 npm install jwt-decode
-```
-
-- At the root of the application
-
-```sh
-npm init -y
-npm install -D concurrently
 ```
 
 Open package.json and add/edit the scripts:
@@ -70,7 +71,8 @@ Open package.json and add/edit the scripts:
 
 ## Usage
 
-After installing npm packages, the application will be invoked by using the following command: 
+After installing npm packages, the application will be invoked by using the following command:
+
 ```
 npm run develop
 ```
@@ -95,6 +97,7 @@ Made by Wenwen Tian
 ## Test Instructions
 
 To run tests for this application, you can run the following command:
+
 ```
 npm run test
 ```
