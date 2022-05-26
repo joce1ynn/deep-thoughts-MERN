@@ -1,4 +1,5 @@
 import React from "react";
+import ThoughtList from "../components/ThoughtList";
 
 // integrate apollo useQuery hook
 // make requests to the GraphQL server and made available to use the <ApolloProvider> component in App.js earlier.
@@ -20,10 +21,21 @@ const Home = () => {
   const thoughts = data?.thoughts || [];
   console.log(thoughts);
 
+  // use a ternary operator to conditionally render the <ThoughtList> component
+  // If the query hasn't completed and loading is still defined, we display a message to indicate just that.
   return (
     <main>
       <div className="flex-row justify-space-between">
-        <div className="col-12 mb-3">{/* PRINT THOUGHT LIST */}</div>
+        <div className="col-12 mb-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <ThoughtList
+              thoughts={thoughts}
+              title="Some Feed for Thought(s)..."
+            />
+          )}
+        </div>
       </div>
     </main>
   );
