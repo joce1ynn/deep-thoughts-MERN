@@ -17,7 +17,10 @@ import Home from "./pages/Home";
 
 // establish a new link to the GraphQL server
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  // URI stands for "Uniform Resource Identifier."
+  // With this proxy value in package.json, the React App set up the development server to prefix all HTTP requests using relative paths
+  // uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 const client = new ApolloClient({

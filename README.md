@@ -34,7 +34,7 @@ To run this project, install it locally using npm: `npm install`
 
 #### Project Creating Process:
 
-- In server directory:
+- ##### In server directory:
 
 ```sh
 npm i
@@ -44,18 +44,33 @@ npm install jsonwebtoken
 npm run watch
 ```
 
-- At the root of the application
+- ##### At the root of the application
 
 ```sh
 npx create-react-app client
 ```
 
-- In client directory:
+- ##### In client directory:
 
 ```sh
 npm i @apollo/client graphql
 npm install react-router-dom
 npm install jwt-decode
+npm start
+```
+
+Open package.json file in the client directory, add the following code at the top:
+
+```json
+"proxy": "http://localhost:3001",
+```
+
+- ##### At to the root directory
+
+```sh
+npm init -y
+# install concurrently library as a dependency for development environment only
+npm install -D concurrently
 ```
 
 Open package.json and add/edit the scripts:
@@ -67,6 +82,8 @@ Open package.json and add/edit the scripts:
   "install": "cd server && npm i && cd ../client && npm i",
   "seed": "cd server && npm run seed"
 }
+
+"main": "server/server.js",
 ```
 
 ## Usage
