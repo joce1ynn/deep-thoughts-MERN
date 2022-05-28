@@ -42,6 +42,7 @@ const client = new ApolloClient({
 function App() {
   //wrap the entire returning JSX code with <ApolloProvider>
   // a path that leads to the wildcard character, an asterisk (*) sending the 404 message.
+  // The ? means this parameter is optional, so /profile and /profile/myUsername will both render the Profile component.
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -52,8 +53,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/thought" element={<SingleThought />} />
+              <Route path="/profile/:username?" element={<Profile />} />
+              <Route path="/thought/:id" element={<SingleThought />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
