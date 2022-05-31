@@ -1,4 +1,3 @@
-//wrapped query code in a tagged template using the imported gql function
 import { gql } from "@apollo/client";
 
 export const QUERY_THOUGHTS = gql`

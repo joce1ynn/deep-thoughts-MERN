@@ -19,7 +19,6 @@ const Home = () => {
   // if data exists, store it in the thoughts constant we just created.
   // If data is undefined, then save an empty array to the thoughts component.
   const thoughts = data?.thoughts || [];
-  console.log(thoughts);
 
   // use a ternary operator to conditionally render the <ThoughtList> component
   // If the query hasn't completed and loading is still defined, we display a message to indicate just that.

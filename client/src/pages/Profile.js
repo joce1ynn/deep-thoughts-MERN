@@ -7,7 +7,7 @@ import { QUERY_USER } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-const Profile = () => {
+const Profile = (props) => {
   const { username: userParam } = useParams();
 
   // pass username from url to the useQuery Hook
@@ -16,6 +16,7 @@ const Profile = () => {
   });
 
   const user = data?.user || {};
+  console.log(user);
 
   if (loading) {
     return <div>Loading...</div>;
