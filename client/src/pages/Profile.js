@@ -1,6 +1,8 @@
 import React from "react";
 import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
+import ThoughtForm from "../components/ThoughtForm";
+
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { ADD_FRIEND } from "../utils/mutations";
 
@@ -26,7 +28,6 @@ const Profile = (props) => {
   });
 
   const user = data?.me || data?.user || {};
-  console.log(user);
 
   // navigate to personal profile page if username is the logged-in user's
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -87,6 +88,7 @@ const Profile = (props) => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
