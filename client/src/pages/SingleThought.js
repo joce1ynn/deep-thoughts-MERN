@@ -8,6 +8,10 @@ import { QUERY_THOUGHT } from "../utils/queries";
 // import reaction
 import ReactionList from "../components/ReactionList";
 
+// import reaction form
+import Auth from "../utils/auth";
+import ReactionForm from "../components/ReactionForm";
+
 const SingleThought = (props) => {
   // get id from url
   const { id: thoughtId } = useParams();
@@ -42,6 +46,8 @@ const SingleThought = (props) => {
       {thought.reactionCount > 0 && (
         <ReactionList reactions={thought.reactions} />
       )}
+
+      {Auth.loggedIn() && <ReactionForm thoughtId={thought._id} />}
     </div>
   );
 };
