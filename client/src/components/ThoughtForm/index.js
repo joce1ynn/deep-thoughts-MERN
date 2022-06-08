@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { ADD_THOUGHT } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const ThoughtForm = () => {
   const [thoughtText, setText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
+
+  // add thoughts
+  const [addThought, { error }] = useMutation(ADD_THOUGHT);
 
   // form content
   const handleChange = (event) => {
