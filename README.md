@@ -8,7 +8,6 @@
 - [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
-- [Test Instructions](#test-instructions)
 - [Questions](#questions)
 
 ## Description:
@@ -150,8 +149,8 @@ This project is licensed under MIT, for more information please visit [this webs
 
 ## Contribution
 
-Made by Wenwen Tian
-Module materials provided by Trilogy Education Services
+- Made by Wenwen Tian
+- Module materials provided by Trilogy Education Services
 
 ## Questions?
 
