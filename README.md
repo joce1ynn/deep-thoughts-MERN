@@ -151,14 +151,7 @@ This project is licensed under MIT, for more information please visit [this webs
 ## Contribution
 
 Made by Wenwen Tian
-
-## Test Instructions
-
-To run tests for this application, you can run the following command:
-
-```
-npm run test
-```
+Module materials provided by Trilogy Education Services
 
 ## Questions?
 
