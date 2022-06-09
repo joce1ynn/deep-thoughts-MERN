@@ -98,6 +98,39 @@ npm run develop
 
 [Click me to see the app!](https:)
 
+#### Heroku Deployment Process
+
+- Create heroku app
+
+  ```
+  heroku create
+  ```
+
+- Create database on MongoDB Atlas:
+
+  ```
+  Cluster ➡️ Collections ➡️ Create Database
+  ```
+
+- Change Heroku setting
+
+  ```
+  Config Vars ➡️ KEY: MONGODB_URI ➡️ VALUE: (from Cluster connect, change password and database name)
+  ```
+
+- Open the package.json file in the root directory, and add the following command to `scripts`:
+
+  ```json
+  "build": "cd client && npm run build"
+  ```
+
+- Git push
+  ```
+  git add/commit
+  git push heroku main
+  heroku open
+  ```
+
 ### Example Screenshot
 
 ![Screenshot](./client/public/DT.png)
