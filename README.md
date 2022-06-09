@@ -96,7 +96,7 @@ npm run develop
 
 ### Deployment
 
-[Click me to see the app!](https:)
+[Click me to see the app!](https://deep-thoughts-20226.herokuapp.com/)
 
 #### Heroku Deployment Process
 
@@ -128,12 +128,20 @@ npm run develop
   ```
   git add/commit
   git push heroku main
+  heroku run npm run seed
   heroku open
   ```
 
-### Example Screenshot
+#### Example Screenshot
 
-![Screenshot](./client/public/DT.png)
+- Main page
+  ![Screenshot](./client/public/DT-1.png)
+
+- Single thought page
+  ![Screenshot](./client/public/DT-2.png)
+
+- Profile page
+  ![Screenshot](./client/public/DT-3.png)
 
 ## License
 
