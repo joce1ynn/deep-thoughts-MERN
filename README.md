@@ -156,5 +156,5 @@ This project is licensed under MIT, for more information please visit [this webs
 
 Please feel free to contact me if you need any further information:
 
-- [Email](wwtian9@gmail.com)
+- [Email](mailto:wwtian9@gmail.com)
 - [Github Profile](https://github.com/joce1ynn)
